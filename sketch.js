@@ -87,6 +87,7 @@ function draw() {
  text("Points: " + score1, 300, 20)
  freddy.collide(invisGround);
 
+console.log(freddy.y)
 
  if (mousePressedOver(play)) {
     gameState = PLAYED
@@ -101,11 +102,12 @@ function draw() {
         ground.x=300;
      }
 
-     if (keyDown("space") && freddy.y>=50) {
+     if (keyWentDown("space") && freddy.y>=65) {
         freddy.velocityY = -13;
     } 
-
+    
     freddy.velocityY = freddy.velocityY+1;
+
     score = score + Math.round(getFrameRate() / 60)
 
     spawnCoins();
@@ -185,7 +187,7 @@ function draw() {
  }
 
  
-  console.log(ground.velocityX)    
+      
  drawSprites();
 }
 // </> </> </>
